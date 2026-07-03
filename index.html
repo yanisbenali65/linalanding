@@ -30,15 +30,15 @@
         .glow-2 { bottom: 10%; right: -10%; width: 600px; height: 600px; background: rgba(240, 225, 210, 0.5); }
         
         /* =========================================
-           ÉTOILES SCINTILLANTES (BACKGROUND)
+           ÉTOILES SCINTILLANTES (MARRON ÉLÉGANT)
            ========================================= */
         .stars-container { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -2; pointer-events: none; overflow: hidden; }
-        .star { position: absolute; background: var(--primary); border-radius: 50%; opacity: 0; animation: twinkle linear infinite; }
+        .star { position: absolute; background: #8B5A2B; /* Marron scintillant */ border-radius: 50%; opacity: 0; animation: twinkle linear infinite; }
         @keyframes twinkle {
-            0% { opacity: 0; transform: scale(0.8); box-shadow: 0 0 0 rgba(196, 164, 130, 0); }
-            50% { opacity: 0.8; transform: scale(1.5); box-shadow: 0 0 15px rgba(196, 164, 130, 1); }
-            100% { opacity: 0; transform: scale(0.8); box-shadow: 0 0 0 rgba(196, 164, 130, 0); }
-        } 
+            0% { opacity: 0; transform: scale(0.8); box-shadow: 0 0 0 rgba(139, 90, 43, 0); }
+            50% { opacity: 0.85; transform: scale(1.6); box-shadow: 0 0 12px rgba(139, 90, 43, 0.8); }
+            100% { opacity: 0; transform: scale(0.8); box-shadow: 0 0 0 rgba(139, 90, 43, 0); }
+        }
 
         h1, h2, h3 { font-weight: 400; line-height: 1.2; color: #1A1A1A; }
         .serif-italic { font-family: var(--font-serif); font-style: italic; color: var(--primary); }
@@ -126,7 +126,7 @@
         .carousel-btn:hover { border-color: var(--primary); color: var(--primary); }
         .carousel-btn svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
         
-        /* FAQ - Accordéon mis à jour */
+        /* FAQ - Accordéon */
         .faq-container { max-width: 800px; margin: 0 auto; }
         .faq-item { border-bottom: 1px solid var(--border-color); }
         .faq-question { width: 100%; text-align: left; background: none; border: none; padding: 30px 0; font-size: 1.2rem; font-family: var(--font-sans); color: var(--text-main); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 700; transition: color 0.3s ease; }
@@ -158,7 +158,6 @@
         .progress-container { width: 100%; height: 6px; background: #f0f0f0; border-radius: 6px; margin-bottom: 40px; overflow: hidden; }
         .progress-bar { height: 100%; background: var(--primary); width: 0%; transition: width 0.5s ease; border-radius: 6px; }
         
-        /* Animation de glissement entre les étapes */
         .form-step { display: none; opacity: 0; transform: translateX(20px); }
         .form-step.active { display: block; animation: slideInStep 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
         @keyframes slideInStep { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
@@ -234,6 +233,7 @@
             </div>
         </section>
 
+        <!-- STATS MISES À JOUR (3 ÉLÉMENTS) -->
         <section class="stats fade-in-up" id="stats-section">
             <div class="stat-item">
                 <div class="stat-number"><span class="counter" data-target="3">0</span></div>
@@ -359,6 +359,7 @@
             </div>
         </section>
 
+        <!-- SECTION INSTAGRAM -->
         <section id="instagram" class="instagram-section">
             <div class="section-title fade-in-up">
                 <span class="sur-titre">Mon Univers</span>
@@ -368,17 +369,24 @@
             
             <div class="ig-grid fade-in-up delay-1">
                 <div class="ig-post-wrapper">
+                    <!-- ⬇️ COLLE LE CODE INSTAGRAM DU POST 1 DE LINA ICI ⬇️ -->
                     <p style="color: var(--text-muted); font-size: 0.9rem; text-align: center; padding: 40px 0;">[Colle le code d'intégration Instagram du Post 1 ici]</p>
-                    </div>
+                    <!-- ⬆️ FIN DU CODE INSTAGRAM ⬆️ -->
+                </div>
                 <div class="ig-post-wrapper">
+                    <!-- ⬇️ COLLE LE CODE INSTAGRAM DU POST 2 DE LINA ICI ⬇️ -->
                     <p style="color: var(--text-muted); font-size: 0.9rem; text-align: center; padding: 40px 0;">[Colle le code d'intégration Instagram du Post 2 ici]</p>
-                    </div>
+                    <!-- ⬆️ FIN DU CODE INSTAGRAM ⬆️ -->
+                </div>
                 <div class="ig-post-wrapper">
+                    <!-- ⬇️ COLLE LE CODE INSTAGRAM DU POST 3 DE LINA ICI ⬇️ -->
                     <p style="color: var(--text-muted); font-size: 0.9rem; text-align: center; padding: 40px 0;">[Colle le code d'intégration Instagram du Post 3 ici]</p>
-                    </div>
+                    <!-- ⬆️ FIN DU CODE INSTAGRAM ⬆️ -->
+                </div>
             </div>
         </section>
 
+        <!-- TEMOIGNAGES -->
         <section id="temoignages" class="testimonials-section">
             <div class="section-title fade-in-up"><span class="sur-titre">Elles ont osé</span><h2>Elles se sont fait confiance avec <span class="serif-italic">NovaLab</span></h2></div>
             <div class="carousel-wrapper fade-in-up delay-1">
@@ -401,6 +409,7 @@
             </div>
         </section>
 
+        <!-- FAQ AVEC ACCORDÉON RÉPARÉ -->
         <section id="faq" class="faq-section fade-in-up">
             <div class="section-title"><span class="sur-titre">Avant de commencer</span><h2>Lève tes doutes.<br><span class="serif-italic">Passe à l'action.</span></h2></div>
             <div class="faq-container">
@@ -436,6 +445,7 @@
         </footer>
     </div>
 
+    <!-- MENU MOBILE -->
     <div class="mobile-menu-overlay" id="mobile-menu">
         <button class="close-menu-btn" id="close-menu-btn-hamburger">&times;</button>
         <nav class="mobile-menu-nav">
@@ -447,11 +457,13 @@
         </nav>
     </div>
 
+    <!-- MODAL POP-UP (SETTER : 6 ÉTAPES) -->
     <div class="modal-overlay" id="application-modal">
         <div class="modal-content">
             <button class="close-modal" id="close-modal-btn">&times;</button>
             <div class="progress-container"><div class="progress-bar" id="modal-progress"></div></div>
 
+            <!-- Etape 0: Intro -->
             <div class="form-step active" data-step="0">
                 <span class="sur-titre">Candidature</span>
                 <h3>Prête à changer de vie ?</h3>
@@ -462,6 +474,7 @@
                 </div>
             </div>
 
+            <!-- Etape 1: Contact -->
             <div class="form-step" data-step="1">
                 <h3>Faisons connaissance</h3>
                 <div class="row-inputs">
@@ -479,6 +492,7 @@
                 </div>
             </div>
 
+            <!-- Etape 2: Situation -->
             <div class="form-step" data-step="2">
                 <h3>Ta situation</h3>
                 <div style="margin-bottom: 25px;">
@@ -498,6 +512,7 @@
                 </div>
             </div>
 
+            <!-- Etape 3: Expérience -->
             <div class="form-step" data-step="3">
                 <h3>Ton expérience en business</h3>
                 <label class="radio-option"><input type="radio" name="niveau" value="debutant"><span class="radio-card">Débutante (Je pars de zéro)</span></label>
@@ -510,6 +525,7 @@
                 </div>
             </div>
 
+            <!-- Etape 4: Vision -->
             <div class="form-step" data-step="4">
                 <h3>Ta vision & Tes blocages</h3>
                 <div class="input-group">
@@ -530,6 +546,7 @@
                 </div>
             </div>
 
+            <!-- Etape 5: Ressources -->
             <div class="form-step" data-step="5">
                 <h3>Tes ressources</h3>
                 <p class="step-desc" style="font-size: 0.85rem; color: var(--primary);">💡 Aucune réponse ne te disqualifiera. Je veux juste cerner ton profil pour te proposer l'accompagnement le plus adapté.</p>
@@ -556,6 +573,7 @@
         </div>
     </div>
 
+    <!-- SCRIPT -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             // GÉNÉRATION DES ÉTOILES SCINTILLANTES
@@ -569,7 +587,7 @@
                     const star = document.createElement('div');
                     star.className = 'star';
                     
-                    const size = Math.random() * 2 + 1; // Entre 1px et 3px
+                    const size = Math.random() * 3 + 2; // Entre 2px et 5px pour plus de visibilité
                     star.style.width = `${size}px`;
                     star.style.height = `${size}px`;
                     
