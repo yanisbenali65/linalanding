@@ -30,14 +30,14 @@
         .glow-2 { bottom: 10%; right: -10%; width: 600px; height: 600px; background: rgba(240, 225, 210, 0.5); }
         
         /* =========================================
-           ÉTOILES SCINTILLANTES (MARRON ÉLÉGANT)
+           ÉTOILES SCINTILLANTES (4 BRANCHES)
            ========================================= */
         .stars-container { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -2; pointer-events: none; overflow: hidden; }
-        .star { position: absolute; background: #8B5A2B; /* Marron scintillant */ border-radius: 50%; opacity: 0; animation: twinkle linear infinite; }
+        .star { position: absolute; color: #8B5A2B; opacity: 0; animation: twinkle linear infinite; user-select: none; }
         @keyframes twinkle {
-            0% { opacity: 0; transform: scale(0.8); box-shadow: 0 0 0 rgba(139, 90, 43, 0); }
-            50% { opacity: 0.85; transform: scale(1.6); box-shadow: 0 0 12px rgba(139, 90, 43, 0.8); }
-            100% { opacity: 0; transform: scale(0.8); box-shadow: 0 0 0 rgba(139, 90, 43, 0); }
+            0% { opacity: 0; transform: scale(0.5) rotate(0deg); text-shadow: 0 0 0 rgba(139, 90, 43, 0); }
+            50% { opacity: 0.85; transform: scale(1.5) rotate(45deg); text-shadow: 0 0 15px rgba(139, 90, 43, 0.8); }
+            100% { opacity: 0; transform: scale(0.5) rotate(90deg); text-shadow: 0 0 0 rgba(139, 90, 43, 0); }
         }
 
         h1, h2, h3 { font-weight: 400; line-height: 1.2; color: #1A1A1A; }
@@ -233,7 +233,7 @@
             </div>
         </section>
 
-        <!-- STATS MISES À JOUR (3 ÉLÉMENTS) -->
+        <!-- STATS (3 ÉLÉMENTS) -->
         <section class="stats fade-in-up" id="stats-section">
             <div class="stat-item">
                 <div class="stat-number"><span class="counter" data-target="3">0</span></div>
@@ -409,7 +409,7 @@
             </div>
         </section>
 
-        <!-- FAQ AVEC ACCORDÉON RÉPARÉ -->
+        <!-- FAQ -->
         <section id="faq" class="faq-section fade-in-up">
             <div class="section-title"><span class="sur-titre">Avant de commencer</span><h2>Lève tes doutes.<br><span class="serif-italic">Passe à l'action.</span></h2></div>
             <div class="faq-container">
@@ -582,19 +582,19 @@
                 starsContainer.className = 'stars-container';
                 document.body.prepend(starsContainer);
 
-                const numStars = 60; // Nombre d'étoiles pour un effet délicat
+                const numStars = 20; // Moins d'étoiles (20) pour plus d'élégance
                 for (let i = 0; i < numStars; i++) {
                     const star = document.createElement('div');
                     star.className = 'star';
+                    star.innerHTML = '✦'; // L'étoile à 4 branches
                     
-                    const size = Math.random() * 3 + 2; // Entre 2px et 5px pour plus de visibilité
-                    star.style.width = `${size}px`;
-                    star.style.height = `${size}px`;
+                    const size = Math.random() * 12 + 10; // Taille aléatoire
+                    star.style.fontSize = `${size}px`;
                     
                     star.style.left = `${Math.random() * 100}vw`;
                     star.style.top = `${Math.random() * 100}vh`;
                     
-                    const duration = Math.random() * 4 + 3; // Entre 3s et 7s
+                    const duration = Math.random() * 5 + 4; // Entre 4s et 9s
                     const delay = Math.random() * 5; // Entre 0s et 5s
                     
                     star.style.animationDuration = `${duration}s`;
