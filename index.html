@@ -30,14 +30,17 @@
         .glow-2 { bottom: 10%; right: -10%; width: 600px; height: 600px; background: rgba(240, 225, 210, 0.5); }
         
         /* =========================================
-           ÉTOILES SCINTILLANTES (4 BRANCHES)
+           ÉTOILES SCINTILLANTES (TRÈS SUBTILES)
            ========================================= */
         .stars-container { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -2; pointer-events: none; overflow: hidden; }
-        .star { position: absolute; color: #8B5A2B; opacity: 0; animation: twinkle linear infinite; user-select: none; }
+        .star { position: absolute; color: rgba(139, 90, 43, 0.6); opacity: 0; animation: twinkle linear infinite; user-select: none; }
+        
+        /* L'étoile ne brille que sur 30% de son cycle total, le reste du temps elle est invisible */
         @keyframes twinkle {
-            0% { opacity: 0; transform: scale(0.5) rotate(0deg); text-shadow: 0 0 0 rgba(139, 90, 43, 0); }
-            50% { opacity: 0.85; transform: scale(1.5) rotate(45deg); text-shadow: 0 0 15px rgba(139, 90, 43, 0.8); }
-            100% { opacity: 0; transform: scale(0.5) rotate(90deg); text-shadow: 0 0 0 rgba(139, 90, 43, 0); }
+            0% { opacity: 0; transform: scale(0.8) rotate(0deg); text-shadow: none; }
+            15% { opacity: 0.6; transform: scale(1.1) rotate(45deg); text-shadow: 0 0 8px rgba(139, 90, 43, 0.4); }
+            30% { opacity: 0; transform: scale(0.8) rotate(90deg); text-shadow: none; }
+            100% { opacity: 0; transform: scale(0.8) rotate(90deg); text-shadow: none; }
         }
 
         h1, h2, h3 { font-weight: 400; line-height: 1.2; color: #1A1A1A; }
@@ -62,7 +65,7 @@
         .btn-secondary { background-color: transparent; color: var(--text-main); border: 1px solid var(--primary); }
         .btn-secondary:hover { background-color: rgba(196, 164, 130, 0.1); }
         
-        /* Stats (3 colonnes) */
+        /* Stats */
         .stats { display: flex; flex-direction: row; justify-content: center; align-items: flex-start; gap: 30px; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 50px 0; flex-wrap: wrap; background: rgba(255,255,255,0.3); }
         .stat-item { display: flex; flex-direction: column; align-items: center; text-align: center; flex: 1 1 30%; min-width: 250px; }
         .stat-number { font-size: 3.5rem; font-family: var(--font-serif); margin-bottom: 10px; color: var(--text-main); line-height: 1; }
@@ -369,19 +372,13 @@
             
             <div class="ig-grid fade-in-up delay-1">
                 <div class="ig-post-wrapper">
-                    <!-- ⬇️ COLLE LE CODE INSTAGRAM DU POST 1 DE LINA ICI ⬇️ -->
                     <p style="color: var(--text-muted); font-size: 0.9rem; text-align: center; padding: 40px 0;">[Colle le code d'intégration Instagram du Post 1 ici]</p>
-                    <!-- ⬆️ FIN DU CODE INSTAGRAM ⬆️ -->
                 </div>
                 <div class="ig-post-wrapper">
-                    <!-- ⬇️ COLLE LE CODE INSTAGRAM DU POST 2 DE LINA ICI ⬇️ -->
                     <p style="color: var(--text-muted); font-size: 0.9rem; text-align: center; padding: 40px 0;">[Colle le code d'intégration Instagram du Post 2 ici]</p>
-                    <!-- ⬆️ FIN DU CODE INSTAGRAM ⬆️ -->
                 </div>
                 <div class="ig-post-wrapper">
-                    <!-- ⬇️ COLLE LE CODE INSTAGRAM DU POST 3 DE LINA ICI ⬇️ -->
                     <p style="color: var(--text-muted); font-size: 0.9rem; text-align: center; padding: 40px 0;">[Colle le code d'intégration Instagram du Post 3 ici]</p>
-                    <!-- ⬆️ FIN DU CODE INSTAGRAM ⬆️ -->
                 </div>
             </div>
         </section>
@@ -409,7 +406,7 @@
             </div>
         </section>
 
-        <!-- FAQ -->
+        <!-- FAQ AVEC ACCORDÉON RÉPARÉ -->
         <section id="faq" class="faq-section fade-in-up">
             <div class="section-title"><span class="sur-titre">Avant de commencer</span><h2>Lève tes doutes.<br><span class="serif-italic">Passe à l'action.</span></h2></div>
             <div class="faq-container">
@@ -582,20 +579,20 @@
                 starsContainer.className = 'stars-container';
                 document.body.prepend(starsContainer);
 
-                const numStars = 20; // Moins d'étoiles (20) pour plus d'élégance
+                const numStars = 12; // Seulement 12 étoiles pour une subtilité absolue
                 for (let i = 0; i < numStars; i++) {
                     const star = document.createElement('div');
                     star.className = 'star';
                     star.innerHTML = '✦'; // L'étoile à 4 branches
                     
-                    const size = Math.random() * 12 + 10; // Taille aléatoire
+                    const size = Math.random() * 6 + 6; // Taille réduite (entre 6px et 12px max)
                     star.style.fontSize = `${size}px`;
                     
                     star.style.left = `${Math.random() * 100}vw`;
                     star.style.top = `${Math.random() * 100}vh`;
                     
-                    const duration = Math.random() * 5 + 4; // Entre 4s et 9s
-                    const delay = Math.random() * 5; // Entre 0s et 5s
+                    const duration = Math.random() * 8 + 8; // Cycle très lent (entre 8s et 16s)
+                    const delay = Math.random() * 15; // Délai de départ très espacé (jusqu'à 15s)
                     
                     star.style.animationDuration = `${duration}s`;
                     star.style.animationDelay = `${delay}s`;
